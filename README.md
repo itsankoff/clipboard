@@ -3,7 +3,7 @@
 ## Run
 ```
 docker build -t docker-static .
-docker run --rm --name=clipboard -p 90:90 docker-static
+docker run --rm --name=clipboard -p 90:90 -v $(pwd)/demo:/usr/share/nginx/html -d docker-static
 ```
 
 ## Browser support

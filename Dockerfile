@@ -5,11 +5,9 @@ USER root
 RUN rm -v /etc/nginx/nginx.conf
 ADD nginx.conf /etc/nginx/
 
-RUN mkdir -p /usr/share/nginx/html
-RUN mkdir -p /var/www/html
-
-ADD demo /usr/share/nginx/html/
-ADD demo /var/www/html/
+# Use bind mount -v $(pwd)/demo:/usr/share/nginx/html when running the container
+RUN mkdir -p /usr/share/nginx
+RUN rm -rf /usr/share/nginx/html
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
