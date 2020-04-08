@@ -1,4 +1,4 @@
-# Browser Clipboard example
+# Browser Clipboard API TestBed
 
 ## Run
 ```
